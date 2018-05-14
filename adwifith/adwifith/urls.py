@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 from wifi.process import Index
+from wifi.process import Portal
+from wifi.process import Adv
+from wifi.process import Inurl
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,13 +27,13 @@ urlpatterns = [
     path('test', Index.test, name='test'),
     # 流程
     path('index', Index.index, name='index'),
-    # path('portal', Portal.portal),
-    # path('adv', Adv.adv),
-    # path('inurl', Inurl.inurl),
+    path('portal', Portal.portal, name='portal'),
+    path('adv', Adv.adv, name='advoutertest'),
+    path('inurl', Inurl.inurl, name='inurl'),
+
     # path('final', Final.final),
     # 其他
-    # path('accsave', Portal.accsave),
     # path('pagecounter', PageCounter.pagecounter),
-    # path('agreement', TemplateView.as_view(template_name="agreement.html")),
+    path('agreement', TemplateView.as_view(template_name="agreement.html"), name='agreement'),
     # # path('api/', include('backend.urls', namespace='api'))
 ]

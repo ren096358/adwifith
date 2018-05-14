@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.adwifi.in.th">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/portal.css' %}">
+    <script src="{% static 'org/jquery-1.11.0.min.js' %}"></script>
+    <title>Free AD Wi-Fi</title>
+</head>
+<body>
+<div class="outDiv">
+    <header>
+        <img class="fullDiv" src="http://free.adwifi.in.th/images/leadingbanner.png">
+    </header>
+    <div>
+        <img class="fullDiv" src="{{ data.portalPic }}" id="portalPic">
+    </div>
+    <div class="fullDiv" style="background-color: white;">
+        <div class="marDiv">
+            <span style="font-size:50px">欢迎使用 Free AD WiFi</span><br>
+            <span style="font-size:30px">Please click button below to access Wi-Fi</span>
+        </div>
+        <img class="sevenDiv" id="loginButton" src="http://free.adwifi.in.th/images/leadingicon.gif">
+        <div class="fullDiv" style="background-color: white;">
+            <br><span style="font-size:27px">&nbsp;可免费重覆使用无限网络 </span><br>
+            <span style="font-size:27px">Connect anytime with Unlimited Access</span><br><br>
+        </div>
+    </div>
+    <div class="checkBox">
+        <input type="checkbox" checked="true" id="checkBox">
+        <a id="openAgreement" style="cursor: pointer">
+            <span style="font-size: 20px">&nbsp;I hereby agree to the term and condition applied.</span></p>
+        </a>
+    </div>
+    <div class="marDiv">
+        <div id="agreementIframeDivID" class="agreementIframeDiv">
+            <button class="closeAgreementIframe" id="closeAgreementIframeID"> X</button>
+            <iframe class="agreementIframe" id="agreementIframeID" src="{% url 'agreement' %}"></iframe>
+        </div>
+        <footer class="footer">
+            <img src="http://free.adwifi.in.th/images/detail.jpg" class="img-responsive" width="100%">
+            <img class="fullDiv" src="http://free.adwifi.in.th/images/adveriserfotter.jpg">
+            <div class="copyright fullDiv"></div>
+        </footer>
+        <form name="redirect" method="post" action="{% url data.advLink %}">
+            {% csrf_token %}
+            <input type="hidden" name="rid" value="{{ data.rid }}">
+            <input type="hidden" name="mac" value="{{ data.mac }}">
+            <input type="hidden" name="link_login_only" value="{{ data.link_login_only }}">
+        </form>
+    </div>
+</div>
+<script src="{% static 'js/portal.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.adwifi.com.tw">
+    <title>Free AD Wi-Fi</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/advouter.css' %}">
+    <script src="{% static 'org/jquery-1.11.0.min.js' %}"></script>
+</head>
+<body>
+<div class="outDiv">
+    <div class="float">
+        <!--                <img class="fullDiv"  src="http://cms.adwifi.com.tw/images/tip/zh-tw/banner.png"> -->
+        <img class="fullDiv" src="http://free.adwifi.in.th/images/adveriserimg.gif">
+    </div>
+    <div class="advIframe">
+        <iframe id="advIframe" width="100%"></iframe>
+    </div>
+    <article>
+        <!--                <div>
+                            <h2>點擊圖片 立即上網</h2>若出現空白頁面<br>請點下方按鈕重新整理
+                        </div> -->
+        <button onclick="history.go(0);">refresh here</button>
+    </article>
+    <footer class="footer">
+        <img class="fullDiv" src="http://free.adwifi.in.th/images/adveriserfotter.jpg">
+        <div class="fullDiv copyright">
+            <!--<span>HOVERING AD Wi-Fi  ALL Rights Reserved</span>-->
+            <!--    <span>FREE AD WIFI 免費網絡行銷系統 www.adwifi.in.th</span> -->
+        </div>
+    </footer>
+</div>
+<form name="redirect" method="post" action="{{ data.link_login_only }}">
+    {% csrf_token %}
+    <input type="hidden" name="username" value="breeze01">
+    <input type="hidden" name="password" value="Breeze">
+    <input type="hidden" name="rid" value="{{ data.rid }}">
+    <input type="hidden" name="mac" value="{{ data.mac }}">
+</form>
+<script>
+    var adUrl = "{{ data.adUrl }}".replace(/&amp;/g, '&');
+    var rid = "{{ data.rid }}";
+    var mac_ = "{{ data.mac }}";
+</script>
+<script src="{% static 'js/advouter.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+* {
+    font-family: 'Open Sans', sans-serif, "微軟正黑體";
+}
+
+body {
+    background: #2F3238;
+    color: #fff;
+    font-weight: 300;
+}
+
+img {
+    max-width: 100%;
+}
+
+pre {
+    font-family: "微軟正黑體";
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    display: block;
+    vertical-align: top;
+}
+
+label img {
+    padding: 0;
+    margin: 0;
+}
+
+input[type="text"] {
+    vertical-align: top;
+}
+
+iframe {
+    width: 100% !important;
+    min-height: 200px;
+    background: #fff;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.logo {
+    margin: 10px 0 5px 6%;
+}
+
+.content {
+    padding: 10px 6%;
+}
+
+.copyright {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #B3B3B3;
+}
+
+#myslider {
+    border-top: 5px solid #2F3238;
+    border-bottom: 5px solid #26292E;
+}
+
+.title {
+    text-transform: uppercase;
+    padding: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    border-bottom: 1px solid #fff;
+}
+
+.subtitle span.small {
+    font-size: 10px;
+}
+
+a.tooltips {
+    position: relative;
+}
+
+a.tooltips span {
+    position: absolute;
+    width: 250px;
+    color: #26292E;
+    background: #fff;
+    height: 80px;
+    line-height: 40px;
+    text-align: center;
+    top: -100px;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -125px;
+    z-index: 999;
+}
+
+a.tooltips span:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #fff;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.darkbg {
+    background: #26292E;
+}
+
+.whitebg {
+    background: #FFFFE0;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.redfont {
+    color: #DE5E60;
+}
+
+.yellowFont {
+    color: #FFFF00;
+}
+
+input.submitbtn {
+    background-color: #2F3238;
+    background: rgba(0, 0, 0, 0);
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    width: 50%;
+    color: #fff;
+    font-weight: 400;
+    border: 2px solid #fff;
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+input.submitbtn:hover {
+    background: #fff;
+    color: #26292E;
+    box-shadow: 6px 6px 0 #161A1D;
+}
+
+a.nextbtn {
+    display: block;
+    margin: 0 auto;
+    line-height: 50px;
+    height: 50px;
+    width: 300px;
+    color: #fff;
+    font-weight: 400;
+    border: 2px solid #fff;
+    text-decoration: none;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+a.nextbtn:hover {
+    background: #fff;
+    color: #26292E;
+    box-shadow: 6px 6px 0 #161A1D;
+}
+
+a.startbtn {
+    display: block;
+    margin: 0 auto;
+    line-height: 200px;
+    height: 200px;
+    width: 100%;
+    color: #fff;
+    font-weight: 400;
+    border: 2px solid #fff;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+a.startbtn:hover {
+    background: #fff;
+    color: #26292E;
+    box-shadow: 6px 6px 0 #161A1D;
+}
+
+ul.fanspage {
+    margin: 0;
+    padding: 0;
+}
+
+ul.fanspage li {
+    display: inline;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 8px;
+}
+
+ul.fanspage li a {
+    color: #fff;
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+}
+
+ul.fanspage li a:hover {
+    color: #DE5E60;
+}

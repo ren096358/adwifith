@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from wifi.models import *
+from wifi.model.Hotspotsinfo import Hotspotsinfo
 import pdb
 
 
@@ -11,20 +11,28 @@ def index(request):
     else:
         input = request.GET
 
-    server_name = input.get('server-name', '')
     index_page = input.get('index-page', '')
+    mac = input.get('mac', '')
+    link_login_only = input.get('link_login_only', '')
+    routerName = input.get('server-name', '')
 
-    sql =
-
-
-    sql = "select rid from forciblyprocess where routerName = '%s'" % \
-          (server_name)
-
+    hotspot = Hotspotsinfo()
+    rid = hotspot.getRid(routerName)
     if index_page == "start":
-        nextUrl =
+        url = hotspot.getUrl(rid, "portal")
     else:
-        nextUrl =
-    pdb.set_trace()
+        url = hotspot.getUrl(rid, "final")
+
+    split = url.split("/")
+    portalLink = split[2].replace(".php", "")
+    # pdb.set_trace()
+    data = {
+        'rid': rid,
+        'mac': mac,
+        'link_login_only': link_login_only,
+        'portalLink': portalLink,
+    }
+    return render(request, 'index.html', {'data': data})
 
 
 def test(request):

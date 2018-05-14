@@ -1,0 +1,39 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif, 'Microsoft JhengHei';
+}
+
+.fullDiv {
+    width: 100%;
+}
+
+.float {
+    position: relative;
+    z-index: 100;
+}
+
+.outDiv {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.advIframe {
+    position: relative;
+    top: 0px;
+}
+
+.footer {
+    background-color: #DDDDDD;
+}
+
+.copyright {
+    background-color: #003377;
+    color: white;
+    font-weight: 450;
+}
