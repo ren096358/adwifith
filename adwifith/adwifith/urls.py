@@ -29,7 +29,8 @@ urlpatterns = [
     # 流程
     path('index', Index.index, name='index'),
     path('portal', Portal.portal, name='portal'),
-    path('adv', Adv.adv, name='advoutertest'),
+    path('adv', Adv.adv, name='advouter'),
+    path('advtest', Adv.adv, name='advoutertest'),
     path('inurl', Inurl.inurl, name='inurl'),
     path('final', Final.final, name='final'),
     # 其他

@@ -10,15 +10,15 @@ def final(request):
     else:
         input = request.GET
 
-    mac = input.get('mac_', '')
+    mac = input.get('mac', '')
     rid = input.get('rid', '')
-
+    #pdb.set_trace()
     hotspot = Hotspotsinfo()
-    advurl = hotspot.selectADVR(rid, mac)
+    finalurl = hotspot.selectADVR(rid, mac)
     if rid == 336:
-        advurl = 'http://adwifi.in.th'
+        finalurl = 'http://adwifi.in.th'
 
     data = {
-        'advurl': advurl
+        'finalurl': finalurl
     }
     return render(request, 'final.html', {'data': data})

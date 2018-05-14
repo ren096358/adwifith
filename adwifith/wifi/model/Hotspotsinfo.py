@@ -7,25 +7,25 @@ class Hotspotsinfo(Model):
         super(Hotspotsinfo, self).__init__()
 
     def getRid(self, routerName):
-        sql = "select rid from hotspotsinfo where routerName = '%s'" % \
+        sql = "SELECT rid FROM hotspotsinfo WHERE routerName = '%s'" % \
               (routerName)
         self._cursor.execute(sql)
         return self._cursor.fetchone()[0]
 
     def getUrl(self, rid, page):
-        sql = "select " + page + " from forciblyprocess where rid = '%s'" % \
+        sql = "SELECT " + page + " FROM forciblyprocess WHERE rid = '%s'" % \
               (rid)
         self._cursor.execute(sql)
         return self._cursor.fetchone()[0]
 
     def getPortalPic(self, rid):
-        sql = "select portalPic from portalstyle where rid = '%s'" % \
+        sql = "SELECT portalPic FROM portalstyle WHERE rid = '%s'" % \
               (rid)
         self._cursor.execute(sql)
         return self._cursor.fetchone()[0]
 
     def getAdvData(self, rid):
-        sql = "select * from advdata where rid = '%s'" % \
+        sql = "SELECT * FROM advdata WHERE rid = '%s'" % \
               (rid)
         self._cursor.execute(sql)
         return self._cursor.fetchone()
@@ -53,7 +53,7 @@ class Hotspotsinfo(Model):
             return False
 
     def selectADVR(self, rid, mac):
-        sql = "select url from advredirect where rid = '%s' and mac = '%s' order by indexid desc" % \
+        sql = "SELECT url FROM advredirect WHERE rid = '%s' AND mac = '%s' ORDER BY indexid DESC LIMIT 1" % \
               (rid, mac)
         self._cursor.execute(sql)
         return self._cursor.fetchone()[0]
