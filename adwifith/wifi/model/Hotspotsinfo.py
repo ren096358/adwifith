@@ -51,3 +51,9 @@ class Hotspotsinfo(Model):
             # 关闭数据库连接
             self._db.close()
             return False
+
+    def selectADVR(self, rid, mac):
+        sql = "select url from advredirect where rid = '%s' and mac = '%s' order by indexid desc" % \
+              (rid, mac)
+        self._cursor.execute(sql)
+        return self._cursor.fetchone()[0]

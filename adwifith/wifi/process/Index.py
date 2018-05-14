@@ -16,6 +16,9 @@ def index(request):
     link_login_only = input.get('link_login_only', '')
     routerName = input.get('server-name', '')
 
+    if link_login_only == "../05final/final.php":
+        link_login_only = "final"
+
     hotspot = Hotspotsinfo()
     rid = hotspot.getRid(routerName)
     if index_page == "start":

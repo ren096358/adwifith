@@ -4,7 +4,7 @@ from wifi.model.Hotspotsinfo import Hotspotsinfo
 import pdb
 
 
-def inurl(request):
+def final(request):
     if request.method == 'POST':
         input = request.POST
     else:
@@ -12,11 +12,13 @@ def inurl(request):
 
     mac = input.get('mac_', '')
     rid = input.get('rid', '')
-    url = input.get('url', '')
 
     hotspot = Hotspotsinfo()
-    result = hotspot.insertADVR(rid, mac, url)
+    advurl = hotspot.selectADVR(rid, mac)
+    if rid == 336:
+        advurl = 'http://adwifi.in.th'
+
     data = {
-        'result': result
+        'advurl': advurl
     }
-    return JsonResponse(data)
+    return render(request, 'final.html', {'data': data})

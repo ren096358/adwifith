@@ -20,6 +20,7 @@ from wifi.process import Index
 from wifi.process import Portal
 from wifi.process import Adv
 from wifi.process import Inurl
+from wifi.process import Final
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,8 +31,7 @@ urlpatterns = [
     path('portal', Portal.portal, name='portal'),
     path('adv', Adv.adv, name='advoutertest'),
     path('inurl', Inurl.inurl, name='inurl'),
-
-    # path('final', Final.final),
+    path('final', Final.final, name='final'),
     # 其他
     # path('pagecounter', PageCounter.pagecounter),
     path('agreement', TemplateView.as_view(template_name="agreement.html"), name='agreement'),

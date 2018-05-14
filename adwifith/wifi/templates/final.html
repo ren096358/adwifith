@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.adwifi.in.th">
+    <!--<link type="text/css" rel="stylesheet" href="{% static 'css/final.css' %}">-->
+    <!--<script src="{% static 'org/jquery-1.11.0.min.js' %}"></script>-->
+    <title>Free AD Wi-Fi</title>
+</head>
+<body>
+<div id="banner">
+    <img id="img" src="http://free.adwifi.in.th/images/connected.png" width="100%">
+</div>
+<!--        <font size="3">可上網 </font><br><font size="3">You Are Now Connected. </font> -->
+<script>
+    var advurl = "{{ data.advurl }}";
+    console.log(advurl);
+    setTimeout("window.location = advurl;", 1000);
+</script>
+</body>
+</html>

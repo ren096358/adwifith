@@ -23,6 +23,7 @@ function postMessageHandler(event) {
                     url: "inurl",
                     type: 'POST',
                     data: {
+                        csrfmiddlewaretoken: token,
                         rid: rid,
                         mac_: mac_,
                         url: event.data.url
