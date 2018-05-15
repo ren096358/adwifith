@@ -42,13 +42,10 @@ class Hotspotsinfo(Model):
               (rid, url, mac)
         self._cursor.execute(sql)
         try:
-            # 提交到数据库执行
             self._db.commit()
             return True
         except:
-            # 如果发生错误则回滚
             self._db.rollback()
-            # 关闭数据库连接
             self._db.close()
             return False
 
