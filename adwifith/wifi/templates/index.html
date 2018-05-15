@@ -5,7 +5,7 @@
     <meta name="author" content="http://www.adwifi.com.tw"/>
 </head>
 <body>
-<form name="redirect" method="post" action="{% url data.portalLink %}">
+<form name="redirect" method="post" action="{% url data.nextLink %}">
     {% csrf_token %}
     <input type="hidden" name="rid" value="{{ data.rid }}">
     <input type="hidden" name="mac" value="{{ data.mac }}">

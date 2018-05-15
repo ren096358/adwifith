@@ -13,10 +13,15 @@
 <div id="banner">
     <img id="img" src="http://free.adwifi.in.th/images/connected.png" width="100%">
 </div>
-<!--        <font size="3">可上網 </font><br><font size="3">You Are Now Connected. </font> -->
+<form name="redirect" action="{{ data.link_login_only }}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="username" value="breeze01">
+    <input type="hidden" name="password" value="Breeze">
+    <input type="hidden" name="rid" value="{{ data.rid }}">
+    <input type="hidden" name="mac" value="{{ data.mac }}">
+</form>
 <script>
-    var finalurl = "{{ data.finalurl }}";
-    setTimeout("window.location = finalurl;", 1000);
+    setTimeout("window.redirect.submit();", 1000);
 </script>
 </body>
 </html>

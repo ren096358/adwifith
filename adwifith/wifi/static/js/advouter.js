@@ -10,7 +10,7 @@ if (window.addEventListener) {
 }
 
 function postMessageHandler(event) {
-    //console.log(event.data);
+    // console.log(event.data);
     switch (event.data.method) {
         case "adwifi_DispalyLayout":
             //whRate = obj.height / obj.width;
@@ -19,27 +19,29 @@ function postMessageHandler(event) {
             break;
         case "adwifi_EventTrigger":
             if (event.data.action == "auth") {
-                $.ajax({
-                    url: "inurl",
-                    type: 'POST',
-                    data: {
-                        csrfmiddlewaretoken: token,
-                        rid: rid,
-                        mac_: mac_,
-                        url: event.data.url
-                    },
-                    error: function (xhr) {
-                        console.log(xhr);
-                    },
-                    success: function (response) {
-                        if (response.result) {
-                            //alert("登入成功");
-                            window.redirect.submit();
-                        } else {
-                            console.log(response);
-                        }
-                    }
-                });
+                $("#url").val(event.data.url);
+                window.redirect.submit();
+                // $.ajax({
+                //     url: "inurl",
+                //     type: 'POST',
+                //     data: {
+                //         csrfmiddlewaretoken: token,
+                //         rid: rid,
+                //         mac_: mac_,
+                //         url: event.data.url
+                //     },
+                //     error: function (xhr) {
+                //         console.log(xhr);
+                //     },
+                //     success: function (response) {
+                //         if (response.result) {
+                //             //alert("登入成功");
+                //             window.redirect.submit();
+                //         } else {
+                //             console.log(response);
+                //         }
+                //     }
+                // });
             }
             break;
     }

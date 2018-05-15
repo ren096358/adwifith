@@ -10,13 +10,17 @@ def inurl(request):
     else:
         input = request.GET
 
-    mac = input.get('mac_', '')
+    mac = input.get('mac', '')
     rid = input.get('rid', '')
     url = input.get('url', '')
+    link_login_only = input.get('link_login_only', '')
 
     hotspot = Hotspotsinfo()
     result = hotspot.insertADVR(rid, mac, url)
+
     data = {
-        'result': result
+        'mac': mac,
+        'rid': rid,
+        'link_login_only': link_login_only
     }
-    return JsonResponse(data)
+    return render(request, 'inurl.html', {'data': data})

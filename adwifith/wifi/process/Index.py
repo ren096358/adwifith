@@ -27,13 +27,13 @@ def index(request):
         url = hotspot.getUrl(rid, "final")
 
     split = url.split("/")
-    portalLink = split[2].replace(".php", "")
+    nextLink = split[2].replace(".php", "")
     # pdb.set_trace()
     data = {
         'rid': rid,
         'mac': mac,
         'link_login_only': link_login_only,
-        'portalLink': portalLink,
+        'nextLink': nextLink,
     }
     return render(request, 'index.html', {'data': data})
 

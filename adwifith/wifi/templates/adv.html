@@ -32,18 +32,20 @@
         </div>
     </footer>
 </div>
-<form name="redirect" method="post" action="{% url data.link_login_only %}">
+<form name="redirect" method="post" action="{% url 'inurl' %}">
     {% csrf_token %}
-    <input type="hidden" name="username" value="breeze01">
-    <input type="hidden" name="password" value="Breeze">
+    <!--<input type="hidden" name="username" value="breeze01">-->
+    <!--<input type="hidden" name="password" value="Breeze">-->
     <input type="hidden" name="rid" value="{{ data.rid }}">
     <input type="hidden" name="mac" value="{{ data.mac }}">
+    <input type="hidden" name="link_login_only" value="{{ data.link_login_only }}">
+    <input type="hidden" name="url" id="url">
 </form>
 <script>
     var adUrl = "{{ data.adUrl }}".replace(/&amp;/g, '&');
-    var rid = "{{ data.rid }}";
-    var mac_ = "{{ data.mac }}";
-    var token = "{{ csrf_token }}";
+    // var rid = "{{ data.rid }}";
+    // var mac_ = "{{ data.mac }}";
+    // var token = "{{ csrf_token }}";
 </script>
 <script src="{% static 'js/advouter.js' %}"></script>
 </body>

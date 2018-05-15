@@ -4,6 +4,11 @@ import pymysql
 class Model(object):
 
     def __init__(self):
+        # db_host = "103.25.97.10"
+        # db_user = "root"
+        # db_password = "adwifihovering"
+        # db_name = "itt_th"
+
         db_host = "localhost"
         db_user = "root"
         db_password = ""

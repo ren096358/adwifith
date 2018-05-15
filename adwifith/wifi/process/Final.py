@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from wifi.model.Hotspotsinfo import Hotspotsinfo
 import pdb
@@ -12,13 +12,10 @@ def final(request):
 
     mac = input.get('mac', '')
     rid = input.get('rid', '')
-    #pdb.set_trace()
+    # pdb.set_trace()
     hotspot = Hotspotsinfo()
     finalurl = hotspot.selectADVR(rid, mac)
-    if rid == 336:
+    if int(rid) == 336:
         finalurl = 'http://adwifi.in.th'
 
-    data = {
-        'finalurl': finalurl
-    }
-    return render(request, 'final.html', {'data': data})
+    return redirect(finalurl)
