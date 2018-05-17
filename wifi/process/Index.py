@@ -28,7 +28,6 @@ def index(request):
 
     split = url.split("/")
     nextLink = split[2].replace(".php", "")
-    # pdb.set_trace()
     data = {
         'rid': rid,
         'mac': mac,
