@@ -13,7 +13,7 @@ def index(request):
 
     index_page = input.get('index-page', '')
     mac = input.get('mac', '')
-    link_login_only = input.get('link_login_only', '')
+    link_login_only = input.get('link-login-only', '')
     routerName = input.get('server-name', '')
 
     if link_login_only == "../05final/final.php":
